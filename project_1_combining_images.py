@@ -27,6 +27,24 @@ cv2.imshow('Numpy Horizontal Concat', numpy_horizontal_concat)
 cv2.waitKey()
 
 """
+import cv2
+import numpy as np
+
+
+list_of_img_paths = [path2, path3, path4]
+im = cv2.imread(path1)
+imstack = cv2.resize(im,(1000, 800))
+
+for path in list_of_img_paths:
+    im = cv2.imread(path)
+    im = cv2.resize(im,(1000,800))
+    imstack = np.hstack(imstack, im)
+
+cv2.imshow('stack', imstack)
+cv2.waitKey(0)
+"""
+
+"""
 # only equally sized Images
 
 im = cv2.imread('1.png')
