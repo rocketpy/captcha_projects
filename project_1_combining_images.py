@@ -25,3 +25,13 @@ cv2.imshow('Numpy Vertical Concat', numpy_vertical_concat)
 cv2.imshow('Numpy Horizontal Concat', numpy_horizontal_concat)
 
 cv2.waitKey()
+
+"""
+# only equally sized Images
+
+im = cv2.imread('1.png')
+img = cv2.imread('2.jpg')
+both = np.hstack((im, im))
+cv2.imshow('imgc', both)
+cv2.waitKey(10000)
+"""
