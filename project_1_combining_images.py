@@ -3,8 +3,14 @@ import numpy as np
 
 
 # First , need make horizontal slices
+image = cv2.imread("file_name")  # or path to file 
+#  need change pixels
+first_slice = image[10:500, 500:2000] 
+second_slice = image[10:500, 500:2000]
+third_slice = image[10:500, 500:2000]
 
-# Second, combining two images
+
+# Second, combining three images
 image = cv2.imread('file_name')
 image = cv2.resize(image, (0, 0), None, .25, .25) # resized the image to a quarter of its original size
 
@@ -20,9 +26,9 @@ numpy_horizontal_concat = np.concatenate((image, grey_3_channel), axis=1)
 
 cv2.imshow('Main', image)
 cv2.imshow('Numpy Vertical', numpy_vertical)
-cv2.imshow('Numpy Horizontal', numpy_horizontal)
+# cv2.imshow('Numpy Horizontal', numpy_horizontal)
 cv2.imshow('Numpy Vertical Concat', numpy_vertical_concat)
-cv2.imshow('Numpy Horizontal Concat', numpy_horizontal_concat)
+# cv2.imshow('Numpy Horizontal Concat', numpy_horizontal_concat)
 
 cv2.waitKey()
 
