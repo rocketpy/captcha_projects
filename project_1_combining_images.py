@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import Image
+from tesseract import image_to_string
 
 
 # take horizontal slices
@@ -8,18 +9,19 @@ img = Image.open('file_name')
 first_slice = img.crop(((10, 0, 50, 10)))
 second_slice = img.crop(((20, 0, 50, 20)))
 third_slice = img.crop(((30, 0, 50, 30)))
-first.save('file_name.jpg')
-second.save('file_name.jpg')
-third.save('file_name.jpg')
 
+# first.save('file_name.jpg')
+# second.save('file_name.jpg')
+# third.save('file_name.jpg')
 
+"""
 # First , need make horizontal slices
 image = cv2.imread("file_name")  # or path to file 
 #  need change pixels
 first_slice = image[10:500, 500:2000] 
 second_slice = image[10:500, 500:2000]
 third_slice = image[10:500, 500:2000]
-
+"""
 
 # Second, combining three images
 image = cv2.imread('file_name')
@@ -70,3 +72,7 @@ both = np.hstack((im, im))
 cv2.imshow('imgc', both)
 cv2.waitKey(10000)
 """
+
+print(image_to_string(Image.open('test.png')))
+print(image_to_string(Image.open('test-english.jpg'), lang='eng'))
+
