@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 import Image
@@ -44,6 +45,12 @@ cv2.imshow('Numpy Vertical Concat', numpy_vertical_concat)
 # cv2.imshow('Numpy Horizontal Concat', numpy_horizontal_concat)
 
 cv2.waitKey()
+
+"""
+text = pytesseract.image_to_string(Image.open(filename))
+os.remove(filename)
+print(text)
+"""
 
 """
 import cv2
