@@ -1,6 +1,14 @@
 import cv2
 import numpy as np
 import pytesseract
+from word2number import w2n
+
+
+# pip install word2number
+
+# example
+# print(w2n.word_to_num('one hundred thirty-five'))
+# result: 135
 
 
 #  remove the noisy dots from image
