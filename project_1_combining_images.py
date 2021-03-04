@@ -3,6 +3,12 @@ import cv2
 import numpy as np
 import Image
 from tesseract import image_to_string
+from word2number import w2n
+
+
+#  example usage w2n
+#  print w2n.word_to_num("two million three thousand nine hundred and eighty four")
+#  result: 2003984
 
 
 # take horizontal slices
