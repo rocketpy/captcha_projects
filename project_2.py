@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 import pytesseract
 from word2number import w2n
+from selenium import webdriver
+from fake_useragent import UserAgent
 
 
 # pip install word2number
@@ -9,6 +11,8 @@ from word2number import w2n
 # example
 # print(w2n.word_to_num('one hundred thirty-five'))
 # result: 135
+
+URL = "https://translate.google.com.ua/?hl=ru&tab=rT"  # for separate words
 
 
 #  remove the noisy dots from image
@@ -24,4 +28,8 @@ img = cv2.GaussianBlur(img, (5, 5), 0)
 cv2.imwrite('res.png', img)
 
 print(pytesseract.image_to_string('res.png'))
+
+
+driver.get(URL)
+driver.
 
