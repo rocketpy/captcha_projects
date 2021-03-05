@@ -13,6 +13,8 @@ from fake_useragent import UserAgent
 # result: 135
 
 URL = "https://translate.google.com.ua/?hl=ru&tab=rT"  # for separate words
+PATH = "C:\..\chromedriver.exe" 
+driver = webdriver.Chrome(PATH) 
 
 
 #  remove the noisy dots from image
@@ -26,10 +28,18 @@ img = cv2.medianBlur(img, 3)
 img = cv2.GaussianBlur(img, (5, 5), 0)
 
 cv2.imwrite('res.png', img)
-
 print(pytesseract.image_to_string('res.png'))
 
-
-driver.get(URL)
-driver.
+# def get_separ_words():
+try:
+    driver.get(URL)
+    search = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[1]/span/span/div/textarea')  # input field 
+    search.send_keys(image_word)  # image_word is a string with a word
+    time.sleep(5)
+    search = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[2]/div[5]/div/div[1]')  # output field
+except Exception as ex:
+    print(ex)
+finally:
+    driver.close()
+    driver.quit()
 
