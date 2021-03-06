@@ -33,10 +33,15 @@ print(pytesseract.image_to_string('res.png'))
 # def get_separ_words():
 try:
     driver.get(URL)
-    search = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[1]/span/span/div/textarea')  # input field 
+    time.sleep(5)
+    search = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[1]/span/span/div/textarea')  # input field                                 
     search.send_keys(image_word)  # image_word is a string with a word
     time.sleep(5)
     search = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[2]/div[5]/div/div[1]')  # output field
+    
+    #  'Perhaps you meant:'
+    #  '//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[1]/div[4]/div/div/div/span/html-blob/b/i'
+    
 except Exception as ex:
     print(ex)
 finally:
