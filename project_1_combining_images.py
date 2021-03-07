@@ -13,9 +13,9 @@ from word2number import w2n
 
 # take horizontal slices
 img = Image.open('file_name')
-first_slice = img.crop(((10, 0, 50, 10)))
-second_slice = img.crop(((20, 0, 50, 20)))
-third_slice = img.crop(((30, 0, 50, 30)))
+first_slice = img.crop(10, 0, 50, 10)
+second_slice = img.crop(20, 0, 50, 20)
+third_slice = img.crop(30, 0, 50, 30)
 
 # first.save('file_name.jpg')
 # second.save('file_name.jpg')
