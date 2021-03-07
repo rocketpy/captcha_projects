@@ -17,6 +17,7 @@ PATH = "C:\..\chromedriver.exe"
 driver = webdriver.Chrome(PATH) 
 image = 'file_name'
 
+
 def clean_image(image):
     #  remove the noise from image
     img = cv2.imread(image_path)
@@ -30,6 +31,7 @@ def clean_image(image):
     # cv2.imwrite('res.png', img)
     result = pytesseract.image_to_string(img)
     return result
+
 
 def get_separ_words(wrd):
     try:
@@ -50,15 +52,17 @@ def get_separ_words(wrd):
         driver.close()
         driver.quit()
         
-   return result 
+        return result
+
+
 def get_result(words):
-        result = w2n.word_to_num(words)
-        return result    
-    
+    result = w2n.word_to_num(words)
+    return result
+
+
 def main():
     print(get_result(get_separ_words(clean_image(image))))
     
 if __name__ == '__main__':
     main()
 
-    
