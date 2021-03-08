@@ -23,6 +23,9 @@ im_v = cv2.hconcat([first_slice, second_slice, third_slice])
 # print(pytesseract.image_to_string(Image.open(im_v), lang="rus"))
 # print(result)
 
+# save image to file
+# cv2.imwrite('new_image.jpg', im_v)
+
 cv2.imshow("Image", im_v)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
