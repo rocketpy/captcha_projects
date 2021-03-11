@@ -1,8 +1,11 @@
 #  How to solve :  Warning: Invalid resolution 0 dpi. Using 70 instead.
 
 # Try using --dpi 300
+# C:\Users\username\Desktop> tesseract image.jpg stdout -l rus
 
-# Need try to use command
+
+
+# this not working , lol ...
 #  mogrify -set units PixelsPerInch -density 300 image.jpg
 # or
 # mogrify -set density 300 image.jpg
