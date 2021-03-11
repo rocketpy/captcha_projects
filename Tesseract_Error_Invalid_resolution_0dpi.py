@@ -3,6 +3,8 @@
 # Try using --dpi 300
 # C:\Users\username\Desktop> tesseract image.jpg stdout -l rus
 
+#  Output to be stored in a text file. 
+# tesseract image.png output.txt
 
 
 # this not working , lol ...
