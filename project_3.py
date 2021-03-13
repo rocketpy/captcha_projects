@@ -25,6 +25,11 @@ im_v = cv2.hconcat([first_slice, second_slice, third_slice])
 
 # save image to file
 # cv2.imwrite('new_image.jpg', im_v)
+print(pytesseract.image_to_string(cv2.imread(im_v), lang="rus"))
+
+# Adding custom options
+custom_config = r'--oem 3 --psm 6'
+pytesseract.image_to_string(img, config=custom_config)
 
 cv2.imshow("Image", im_v)
 cv2.waitKey(0)
