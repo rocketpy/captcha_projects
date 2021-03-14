@@ -28,3 +28,8 @@ def dilate(image):
 def erode(image):
     kernel = np.ones((5,5),np.uint8)
     return cv2.erode(image, kernel, iterations = 1)
+
+# opening - erosion followed by dilation
+def opening(image):
+    kernel = np.ones((5,5),np.uint8)
+    return cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
