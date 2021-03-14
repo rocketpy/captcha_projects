@@ -33,3 +33,7 @@ def erode(image):
 def opening(image):
     kernel = np.ones((5,5),np.uint8)
     return cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
+
+# canny edge detection
+def canny(image):
+    return cv2.Canny(image, 100, 200)
