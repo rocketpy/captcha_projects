@@ -3,8 +3,20 @@
 import cv2
 import numpy as np
 
+"""
+# After preprocessing use this code !
+
+image = cv2.imread('aurebesh.jpg')
+
+gray = get_grayscale(image)
+thresh = thresholding(gray)
+opening = opening(gray)
+canny = canny(gray)
+"""
 
 img = cv2.imread('image.jpg')
+
+# Preprocessing functions
 
 # get grayscale image
 def get_grayscale(image):
