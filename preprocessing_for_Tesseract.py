@@ -1,7 +1,8 @@
 #  To preprocess image for Tesseract, use any of the following python functions
-
+import os
 import cv2
 import numpy as np
+from PIL import Image
 
 """
 # After preprocessing use this code !
@@ -21,6 +22,10 @@ img = cv2.imread('image.jpg')
 # get grayscale image
 def get_grayscale(image):
     return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# image = '/tmp/tests.png'
+# image = cv2.imread(image)
+# gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # noise removal
 def remove_noise(image):
