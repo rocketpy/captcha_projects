@@ -35,6 +35,23 @@ def remove_noise(image):
 def thresholding(image):
     return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
+"""
+preprocess = "thresh"
+if preprocess == "thresh":
+    gray = cv2.threshold(gray, 0, 255,
+        cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+# remove the noise        
+elif preprocess == "blur":
+    gray = cv2.medianBlur(gray, 3)     
+    
+# save result
+filename = "{}.png".format(os.getpid())
+cv2.imwrite(filename, gray)
+text = pytesseract.image_to_string(Image.open(filename))
+print(text)
+"""
+
+
 # dilation
 def dilate(image):
     kernel = np.ones((5,5),np.uint8)
