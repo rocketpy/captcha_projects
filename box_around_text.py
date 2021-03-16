@@ -37,3 +37,21 @@ for b in boxes.splitlines():
 cv2.imshow(filename, img)
 cv2.waitKey(0)
 """
+
+"""
+import cv2
+import pytesseract
+from pytesseract import Output
+
+
+img = cv2.imread('/home/file_name.jpg')
+
+d = pytesseract.image_to_data(img, output_type=Output.DICT)
+n_boxes = len(d['level'])
+for i in range(n_boxes):
+    if(d['text'][i] != ""):
+        (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
+        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+cv2.imwrite('result.png', img)
+"""
