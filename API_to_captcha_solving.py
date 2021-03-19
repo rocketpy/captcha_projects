@@ -30,3 +30,13 @@ solver = CaptchaSolver('browser')
 raw_data = open('captcha.png', 'rb').read()
 print(solver.solve_captcha(raw_data))
 
+
+# Antigate Backend Example
+# Service website is http://getcaptchasolution.com/ijykrofoxz
+
+from captcha_solver import CaptchaSolver
+
+
+solver = CaptchaSolver('antigate', api_key='ANTIGATE_KEY')
+raw_data = open('captcha.png', 'rb').read()
+print(solver.solve_captcha(raw_data))
