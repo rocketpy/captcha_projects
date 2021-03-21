@@ -34,16 +34,26 @@ for x in range(im.size[1]):
             im2.putpixel((y, x), 0)
             
 inletter = False
-foundletter=False
+foundletter = False
 start = 0
 end = 0
 
 letters = []
 
-for y in range(im2.size[0]): _# slice across_
-    for x in range             
-            
+for y in range(im2.size[0]):
+    for x in range:             
+        if foundletter == Falseand inletter == True:
+            foundletter = True
+            start = y
+
+        if foundletter == Trueand inletter == False:
+            foundletter = False
+            end = y
+            letters.append((start,end))
+
+        inletter=False
+print(letters)  #  result is horizontal positions of the beginning and end of each character
+
 # im2.save("output.gif")
 """
-
 
