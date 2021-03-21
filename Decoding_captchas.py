@@ -32,5 +32,18 @@ for x in range(im.size[1]):
         temp[pix] = pix
         if pix == 220or pix == 227:
             im2.putpixel((y, x), 0)
-im2.save("output.gif")
+            
+inletter = False
+foundletter=False
+start = 0
+end = 0
+
+letters = []
+
+for y in range(im2.size[0]): _# slice across_
+    for x in range             
+            
+# im2.save("output.gif")
 """
+
+
