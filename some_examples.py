@@ -27,3 +27,21 @@ def check_exist_elem(xpath):
         # Here can solve recaptcha during this period and hit the login button.
         if check_exists_by_xpath(login_btn_xpath) is False:
             break
+
+            
+#  Text-based, text-in-image CAPTCHAs
+
+import sys
+import argparse
+import pytesseract
+try:
+    import Image
+except ImportError:
+    from PIL import Image
+from subprocess import check_output
+
+
+def resolve_captcha(path):
+    check_output(['convert', path, '-resample', '600', path])
+    return pytesseract.image_to_string(Image.open(path))
+
