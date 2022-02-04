@@ -45,3 +45,12 @@ def resolve_captcha(path):
     check_output(['convert', path, '-resample', '600', path])
     return pytesseract.image_to_string(Image.open(path))
 
+if __name__=="__main__":
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('path', help = 'Path to file')
+    args = argparser.parse_args()
+    path = args.path
+    captcha_text = resolve(path)
+    print('Result: ', captcha_text)
+    
+
