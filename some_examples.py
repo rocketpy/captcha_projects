@@ -89,3 +89,25 @@ dataset = {'     *       *      *      *      *      ******* ': 'J',
            '*******     *     *     *       *       * *******': 'W'}
     
 
+def group_captcha_string(word_pos):
+    
+    captcha_string = ''
+    
+    for i in range(len(word_pos[0])):
+        temp_list = []
+        temp_string = ''
+
+        for j in range(len(word_pos)):
+            val = word_pos[j][i]
+            temp_string += val
+
+            if val.strip():
+                temp_list.append(val)
+
+        if temp_list:
+            captcha_string += temp_string
+        else:
+            captcha_string += 'sp'
+
+    return captcha_string.split("spsp")
+
