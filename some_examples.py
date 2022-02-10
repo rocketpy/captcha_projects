@@ -124,3 +124,11 @@ captcha = client.find_element_by_css_selector('form [class="realperson-text"]').
 
 word_pos = list(map(_get, captcha))
 
+# group text
+text = group_captcha_string(word_pos)
+
+# get text(test)
+captcha_text = ''.join(list(map(lambda x: dataset[x] if x else '', text)))
+print("captcha:", captcha_text)
+
+
