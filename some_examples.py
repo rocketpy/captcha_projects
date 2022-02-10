@@ -111,3 +111,16 @@ def group_captcha_string(word_pos):
 
     return captcha_string.split("spsp")
 
+# create client
+client = webdriver.Chrome()
+client.get("http://keith-wood.name/realPerson.html")
+time.sleep(3)
+
+# indexing text
+_get = lambda _in: {index: val for index, val in enumerate(_in)}
+
+# get text from html tag
+captcha = client.find_element_by_css_selector('form [class="realperson-text"]').text.split('\n')
+
+word_pos = list(map(_get, captcha))
+
