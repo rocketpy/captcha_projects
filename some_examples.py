@@ -56,7 +56,10 @@ if __name__=="__main__":
     captcha_text = resolve(path)
     print('Result: ', captcha_text)
     
-
+    
+# Origin taked from:
+# https://cloudsek.com/how-to-bypass-captchas-easily-using-python-and-other-methods/
+    
 import time
 from selenium import webdriver
 
@@ -122,13 +125,13 @@ _get = lambda _in: {index: val for index, val in enumerate(_in)}
 # get text from html tag
 captcha = client.find_element_by_css_selector('form [class="realperson-text"]').text.split('\n')
 
-word_pos = list(map(_get, captcha))
+word_position = list(map(_get, captcha))
 
 # group text
-text = group_captcha_string(word_pos)
+text = group_captcha_string(word_position)
 
 # get text(test)
 captcha_text = ''.join(list(map(lambda x: dataset[x] if x else '', text)))
-print("captcha:", captcha_text)
+print("Captcha:", captcha_text)
 
 
